@@ -1,0 +1,13 @@
+{
+    "name": "CulinaryCategory",
+    "alias": "culinarycategory",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\CulinaryCategory\\Providers\\CulinaryCategoryServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

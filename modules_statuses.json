@@ -1,0 +1,8 @@
+{
+    "LandingPage": true,
+    "DestinationPlace": true,
+    "DestinationCategory": true,
+    "CulinaryCategory": true,
+    "DestinationTransaction": true,
+    "Dashboard": true
+}

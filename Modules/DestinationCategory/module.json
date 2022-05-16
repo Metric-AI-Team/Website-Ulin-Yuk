@@ -1,0 +1,13 @@
+{
+    "name": "DestinationCategory",
+    "alias": "destinationcategory",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\DestinationCategory\\Providers\\DestinationCategoryServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}
