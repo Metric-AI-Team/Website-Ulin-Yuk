@@ -11,7 +11,7 @@
                             <div class="col-10 col-lg-8">
                                 <h1 class="display-1 text-white animated slideInDown">Best Website for Bandung Destination Recommended Services</h1>
                                 <p class="fs-5 fw-medium text-white mb-4 pb-3">Find your favorite destination you want to visit here.</p>
-                                <a href="/about.html" class="btn btn-primary py-3 px-5 animated slideInLeft">Read More</a>
+                                <a href="/about" class="btn btn-primary py-3 px-5 animated slideInLeft">Read More</a>
                             </div>
                         </div>
                     </div>
@@ -25,7 +25,7 @@
                             <div class="col-10 col-lg-8">
                                 <h1 class="display-1 text-white animated slideInDown">Best Website for Bandung Destination Recommended Services</h1>
                                 <p class="fs-5 fw-medium text-white mb-4 pb-3">Find your favorite destination you want to visit here.</p>
-                                <a href="/about.html" class="btn btn-primary py-3 px-5 animated slideInLeft">Read More</a>
+                                <a href="/about" class="btn btn-primary py-3 px-5 animated slideInLeft">Read More</a>
                             </div>
                         </div>
                     </div>
@@ -39,7 +39,7 @@
                             <div class="col-10 col-lg-8">
                                 <h1 class="display-1 text-white animated slideInDown">Best Website for Bandung Destination Recommended Services</h1>
                                 <p class="fs-5 fw-medium text-white mb-4 pb-3">Find your favorite destination you want to visit here.</p>
-                                <a href="/about.html" class="btn btn-primary py-3 px-5 animated slideInLeft">Read More</a>
+                                <a href="/about" class="btn btn-primary py-3 px-5 animated slideInLeft">Read More</a>
                             </div>
                         </div>
                     </div>
@@ -135,7 +135,7 @@
                             <img class="mb-4" src="{{secure_asset('img')}}/icons/icon-5.png" alt="Icon">
                             <h3 class="mb-3">Destinasi</h3>
                             <p class="mb-4">Temukan destinasi wisata favorit anda disini, mulai dari destinasi wisata alam, pendidikan, sejarah, budaya, religi dan lain-lain. Semua kami rekomendasikan kepada anda.</p>
-                            <a class="btn" href="/destinasi.html"><i class="fa fa-plus text-primary me-3"></i>Read More</a>
+                            <a class="btn" href="/destination"><i class="fa fa-plus text-primary me-3"></i>Read More</a>
                         </div>
                     </div>
                 </div>
@@ -146,7 +146,7 @@
                             <img class="mb-4" src="{{secure_asset('img')}}/icons/icon-6.png" alt="Icon">
                             <h3 class="mb-3">Kuliner</h3>
                             <p class="mb-4">Semua rekomendasi kuliner favorit anda dapat anda temukan disini, mulai dari aneka minuman, aneka kue, cemilan atau snack, serta street food.</p>
-                            <a class="btn" href="/kuliner.html"><i class="fa fa-plus text-primary me-3"></i>Read More</a>
+                            <a class="btn" href="/culinary"><i class="fa fa-plus text-primary me-3"></i>Read More</a>
                         </div>
                     </div>
                 </div>
@@ -157,7 +157,7 @@
                             <img class="mb-4" src="{{secure_asset('img')}}/icons/icon-7.png" alt="Icon">
                             <h3 class="mb-3">Chatbot</h3>
                             <p class="mb-4">Konsultasikan destinasi serta kuliner yang anda inginkan dengan fitur layanan Chat Bot kami. Kami menghadirkan berbagai rekomendasi destinasi, serta kuliner favorit anda.</p>
-                            <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read More</a>
+                            <a class="btn" href="/chatbot"><i class="fa fa-plus text-primary me-3"></i>Read More</a>
                         </div>
                     </div>
                 </div>

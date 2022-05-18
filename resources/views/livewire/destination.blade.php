@@ -17,8 +17,54 @@
                 <p class="mb-4 teks">{{$value->destination_description_first}}</p>
                 <br />
                 <p class ="mb-4 teks">.......</p>
-                <a class="btn" href="/detail-page.html"><i class="fa fa-plus text-primary me-3"></i>Read More</a>
+                <div class="row">
+                <div class="col">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#destination{{$value->destination_id}}">
+                        <i class="fa fa-plus text-primary me-3"></i>Read More
+                      </button>
+                </div>
+                  <div class="col">
+                    @if(empty(auth()->user()->id))
+
+                    @elseif(!empty(auth()->user()->id))
+                    <button class="btn btn-primary mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample{{$value->destination_id}}" aria-expanded="false" aria-controls="collapseExample">
+                        <i class="fa fa-star text-primary me-3"></i>Rating
+                      </button>
+                      <div class="collapse" id="collapseExample{{$value->destination_id}}" wire:ignore.self>
+                        <form wire:submit.prevent="createRating({{$value->destination_id}})" class="mb-3">
+
+                            <div class="form-group">
+                                <label class="text-white" for="">Rekomendasi</label>
+                                <input type="text" name="destination_recommendation" wire:model="destination_recommendation" class="form-control text-dark" placeholder="Beri Rekomendasi">
+                                @error('destination_recommendation') <div class="alert alert-danger">{{ $message }}</div> @enderror
+                              </div>
+                              <div class="form-group">
+                                <label class="text-white" for="">Rating</label>
+                                <input type="text" name="destination_rating" wire:model="destination_rating" class="form-control text-dark" placeholder="Beri Rating">
+                                @error('destination_rating') <div class="alert alert-danger">{{ $message }}</div> @enderror
+                              </div>
+                              <br>
+                              <button class="btn btn-primary" wire:submit.prevent="createRating({{$value->destination_id}})">Kirim</button>
+                        </form>
+                          @foreach ($destination_ratings as $valuex)
+                            @if ($value->destination_id == $valuex->destination_id)
+                            <h4 class="fw-bold fs-1">{{$valuex->name}}</h4>
+                            <p class="fw-medium text-secondary">Rekomendasi : <br> {{$valuex->destination_recommendation}}</p>
+                            <p class="mb-4 fw-medium text-secondary">Rating : {{number_format($valuex->destination_rating)}}</p>
+                            @if(empty(auth()->user()->id))
+
+                            @elseif(!empty(auth()->user()->id == $valuex->id))
+                            <button class="btn btn-sm btn-danger" wire:click.prevent="destroyRating({{$valuex->destination_rating_id}})">Hapus</button>
+                            @endif
+                            @endif
+                            @endforeach
             </div>
+
+          @endif
+                  </div>
+                </div>
+            </div>
+
         </div>
     </div>
 
@@ -31,5 +77,61 @@
     {{ $destinations->links() }}
     </div>
     </div>
+
+    <!-- Modal -->
+    @foreach ($destinations as $value)
+<div wire:ignore.self class="modal fade" id="destination{{$value->destination_id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Destination</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+                <img src="{{$value->destination_image}}" class="card-img-top" alt="..." height="300">
+                <div class="card-body">
+                  <h3 class="card-title">{{$value->destination_title}}</h3>
+                  <p class="card-text"><strong>{{$value->destination_category_name}}</strong></p>
+                  <div class="row">
+                    <div class="col">
+                        <p class="card-text"><strong>Latitude : {{$value->destination_latitude}}</strong></p>
+                    </div>
+                    <div class="col">
+                        <p class="card-text"><strong>Longitude : {{$value->destination_longitude}}</strong></p>
+                    </div>
+                  </div>
+                  <p class="card-text">{{$value->destination_description_first}}</p>
+                  <p class="card-text">{{$value->destination_description_second}}</p>
+                  <p class="card-text"><strong>Rp.{{number_format($value->destination_price)}},-</strong></p>
+                  @if ($value->destination_status == '1')
+                    <p class="card-text">Buka</p>
+                  @else
+                    <p class="card-text">Tutup</p>
+                  @endif
+
+                  @if ($value->destination_rating == '5')
+                    <p class="card-text">Rating : *****</p>
+                  @elseif ($value->destination_rating == '4')
+                    <p class="card-text">Rating : ****</p>
+                  @elseif ($value->destination_rating == '3')
+                    <p class="card-text">Rating : ***</p>
+                  @elseif ($value->destination_rating == '2')
+                    <p class="card-text">Rating : **</p>
+                  @elseif ($value->destination_rating == '1')
+                    <p class="card-text">Rating : *</p>
+                  @endif
+
+
+                </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          {{-- <button type="button" class="btn btn-primary">Save changes</button> --}}
+        </div>
+      </div>
+    </div>
+  </div>
+  @endforeach
 
 </div>

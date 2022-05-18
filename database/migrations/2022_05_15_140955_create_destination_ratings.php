@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id('destination_rating_id');
             $table->bigInteger('user_id')->unsigned();
             $table->bigInteger('destination_id')->unsigned();
-            $table->integer('destination_rating')->nullable();
+            $table->text('destination_rating')->nullable();
             $table->longText('destination_recommendation');
             $table->timestamps();
         });
