@@ -12,7 +12,7 @@
         <div class="service-item d-flex position-relative text-center h-100">
             <img class="bg-img" src="{{$value->destination_image}}" alt="">
             <div class="service-text p-5">
-                <img class="me-3" src="{{asset('img')}}/icons/Icon-Ulin-Yuk.png" alt="Icon">
+                <img class="me-3" src="{{secure_asset('img')}}/icons/Icon-Ulin-Yuk.png" alt="Icon">
                 <h3 class="mb-3">{{$value->destination_title}}</h3>
                 <p class="mb-4 teks">{{$value->destination_description_first}}</p>
                 <br />
@@ -44,7 +44,7 @@
                                 @error('destination_rating') <div class="alert alert-danger">{{ $message }}</div> @enderror
                               </div>
                               <br>
-                              <button class="btn btn-primary" wire:submit.prevent="createRating({{$value->destination_id}})">Kirim</button>
+                              <button class="btn btn-primary" wire:submit.prevent="createRating({{$value->destination_id}})"><i class="fa fa-plus text-primary me-3"></i>Kirim</button>
                         </form>
                           @foreach ($destination_ratings as $valuex)
                             @if ($value->destination_id == $valuex->destination_id)
@@ -54,7 +54,7 @@
                             @if(empty(auth()->user()->id))
 
                             @elseif(!empty(auth()->user()->id == $valuex->id))
-                            <button class="btn btn-sm btn-danger" wire:click.prevent="destroyRating({{$valuex->destination_rating_id}})">Hapus</button>
+                            <button class="btn btn-sm btn-danger" wire:click.prevent="destroyRating({{$valuex->destination_rating_id}})"><i class="fa fa-eraser text-primary me-3"></i>Hapus</button>
                             @endif
                             @endif
                             @endforeach
@@ -92,34 +92,47 @@
                 <div class="card-body">
                   <h3 class="card-title">{{$value->destination_title}}</h3>
                   <p class="card-text"><strong>{{$value->destination_category_name}}</strong></p>
-                  <div class="row">
+                  <div class="row mb-3">
                     <div class="col">
-                        <p class="card-text"><strong>Latitude : {{$value->destination_latitude}}</strong></p>
+                        <iframe
+                    src="https://maps.google.com/maps?q=+{{$value->destination_latitude}}+,+{{$value->destination_longitude}}+&hl=ina&z=14&amp;output=embed">
+                    </iframe>
                     </div>
                     <div class="col">
+                        <p class="card-text"><strong>Latitude : {{$value->destination_latitude}}</strong></p>
                         <p class="card-text"><strong>Longitude : {{$value->destination_longitude}}</strong></p>
                     </div>
                   </div>
                   <p class="card-text">{{$value->destination_description_first}}</p>
                   <p class="card-text">{{$value->destination_description_second}}</p>
-                  <p class="card-text"><strong>Rp.{{number_format($value->destination_price)}},-</strong></p>
-                  @if ($value->destination_status == '1')
-                    <p class="card-text">Buka</p>
-                  @else
-                    <p class="card-text">Tutup</p>
-                  @endif
 
-                  @if ($value->destination_rating == '5')
-                    <p class="card-text">Rating : *****</p>
-                  @elseif ($value->destination_rating == '4')
-                    <p class="card-text">Rating : ****</p>
-                  @elseif ($value->destination_rating == '3')
-                    <p class="card-text">Rating : ***</p>
-                  @elseif ($value->destination_rating == '2')
-                    <p class="card-text">Rating : **</p>
-                  @elseif ($value->destination_rating == '1')
-                    <p class="card-text">Rating : *</p>
-                  @endif
+                  <div class="row mb-3">
+                    <div class="col">
+                        <div class="visible-print text-center border-light">
+						    {!! QrCode::size(100)->generate($value->destination_device_code); !!}
+						</div>
+                    </div>
+
+                    <div class="col">
+                        <p class="card-text"><strong>Rp.{{number_format($value->destination_price)}},-</strong></p>
+                        @if ($value->destination_status == '1')
+                            <p class="card-text">Buka</p>
+                        @else
+                            <p class="card-text">Tutup</p>
+                        @endif
+                        @if ($value->destination_rating == '5')
+                            <p class="card-text">Rating : *****</p>
+                        @elseif ($value->destination_rating == '4')
+                            <p class="card-text">Rating : ****</p>
+                        @elseif ($value->destination_rating == '3')
+                            <p class="card-text">Rating : ***</p>
+                        @elseif ($value->destination_rating == '2')
+                            <p class="card-text">Rating : **</p>
+                        @elseif ($value->destination_rating == '1')
+                            <p class="card-text">Rating : *</p>
+                        @endif
+                    </div>
+                  </div>
 
 
                 </div>
