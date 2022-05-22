@@ -12,7 +12,7 @@
         <div class="service-item d-flex position-relative text-center h-100">
             <img class="bg-img" src="{{$value->destination_image}}" alt="">
             <div class="service-text p-5">
-                <img class="me-3" src="{{secure_asset('img')}}/icons/Icon-Ulin-Yuk.png" alt="Icon">
+                <img class="me-3" src="{{asset('img')}}/icons/Icon-Ulin-Yuk.png" alt="Icon">
                 <h3 class="mb-3">{{$value->destination_title}}</h3>
                 <p class="mb-4 teks">{{$value->destination_description_first}}</p>
                 <br />
