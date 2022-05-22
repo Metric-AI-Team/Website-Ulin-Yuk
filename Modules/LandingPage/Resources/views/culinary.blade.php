@@ -22,7 +22,9 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-            <iframe src="https://ulinyuk.netlify.app/" frameborder="0" width="500" height="300"></iframe>
+          <div style="text-align:center;">
+            <iframe src="https://ulinyuk.netlify.app/" allow="camera" frameborder="0" width="500" height="300"></iframe>
+          </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -31,10 +33,11 @@
     </div>
   </div>
         @livewire('culinary')
-
-
         </div>
     </div>
 </div>
 <!-- Destinasi End -->
+@endsection
+@section('scripts')
+
 @endsection

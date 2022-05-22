@@ -9,8 +9,8 @@
     <meta content="" name="description">
 
     <!-- Favicons -->
-  <link href="{{secure_asset('img')}}/ulin-yuk.png" rel="icon">
-  <link href="{{secure_asset('img')}}/ulin-yuk.png" rel="apple-touch-icon">
+  <link href="{{asset('img')}}/ulin-yuk.png" rel="icon">
+  <link href="{{asset('img')}}/ulin-yuk.png" rel="apple-touch-icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,15 +22,15 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <link href="{{secure_asset('lib')}}/animate/animate.min.css" rel="stylesheet">
-    <link href="{{secure_asset('lib')}}/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="{{secure_asset('lib')}}/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+    <link href="{{asset('lib')}}/animate/animate.min.css" rel="stylesheet">
+    <link href="{{asset('lib')}}/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="{{asset('lib')}}/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="{{secure_asset('css')}}/bootstrap.min.css" rel="stylesheet">
+    <link href="{{asset('css')}}/bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="{{secure_asset('css')}}/style.css" rel="stylesheet">
+    <link href="{{asset('css')}}/style.css" rel="stylesheet">
     @livewireStyles
 </head>
 
@@ -72,7 +72,7 @@
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
         <a href="/" class="navbar-brand ms-4 ms-lg-0">
-            <h1 class= m-0"><img class="me-3" src="{{secure_asset('img')}}/icons/Icon-Ulin-Yuk.png" alt="Icon">Ulin Yuk</h1>
+            <h1 class= m-0"><img class="me-3" src="{{asset('img')}}/icons/Icon-Ulin-Yuk.png" alt="Icon">Ulin Yuk</h1>
         </a>
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
@@ -118,6 +118,7 @@
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                     <li><a class="dropdown-item" href="/dashboard">Dashboard</a></li>
                                   <li><a class="dropdown-item" href="/profile">Profile</a></li>
+                                  <li><a class="dropdown-item" href="/topup">Topup</a></li>
                                   <li><a class="dropdown-item" href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
                                                   document.getElementById('logout-form').submit();">
@@ -156,14 +157,14 @@
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <h3 class="text-light mb-4">Services</h3>
-                    <a class="btn btn-link" href="/destinasi.html">Destination</a>
-                    <a class="btn btn-link" href="/kuliner.html">Culinary</a>
+                    <a class="btn btn-link" href="/destination">Destination</a>
+                    <a class="btn btn-link" href="/culinary">Culinary</a>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <h3 class="text-light mb-4">Quick Links</h3>
-                    <a class="btn btn-link" href="/about.html">About Us</a>
-                    <a class="btn btn-link" href="/contact.html">Contact Us</a>
-                    <a class="btn btn-link" href="/testimonial.html">Testimonial</a>
+                    <a class="btn btn-link" href="/about">About Us</a>
+                    <a class="btn btn-link" href="/contact">Contact Us</a>
+                    <a class="btn btn-link" href="/testimonial">Testimonial</a>
                 </div>
 
             </div>
@@ -193,19 +194,19 @@
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="{{secure_asset('lib')}}/wow/wow.min.js"></script>
-    <script src="{{secure_asset('lib')}}/easing/easing.min.js"></script>
-    <script src="{{secure_asset('lib')}}/waypoints/waypoints.min.js"></script>
-    <script src="{{secure_asset('lib')}}/counterup/counterup.min.js"></script>
-    <script src="{{secure_asset('lib')}}/owlcarousel/owl.carousel.min.js"></script>
-    <script src="{{secure_asset('lib')}}/tempusdominus/js/moment.min.js"></script>
-    <script src="{{secure_asset('lib')}}/tempusdominus/js/moment-timezone.min.js"></script>
-    <script src="{{secure_asset('lib')}}/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
-
+    <script src="{{asset('lib')}}/wow/wow.min.js"></script>
+    <script src="{{asset('lib')}}/easing/easing.min.js"></script>
+    <script src="{{asset('lib')}}/waypoints/waypoints.min.js"></script>
+    <script src="{{asset('lib')}}/counterup/counterup.min.js"></script>
+    <script src="{{asset('lib')}}/owlcarousel/owl.carousel.min.js"></script>
+    <script src="{{asset('lib')}}/tempusdominus/js/moment.min.js"></script>
+    <script src="{{asset('lib')}}/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="{{asset('lib')}}/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+    @yield('scripts')
     @livewireScripts
 
     <!-- Template Javascript -->
-    <script src="{{secure_asset('js')}}/main.js"></script>
+    <script src="{{asset('js')}}/main.js"></script>
 </body>
 
 </html>

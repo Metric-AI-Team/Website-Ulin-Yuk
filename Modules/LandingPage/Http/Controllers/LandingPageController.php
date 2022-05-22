@@ -5,6 +5,8 @@ namespace Modules\LandingPage\Http\Controllers;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\DB;
+use Auth;
 
 class LandingPageController extends Controller
 {
@@ -17,9 +19,30 @@ class LandingPageController extends Controller
         return view('landingpage::index');
     }
 
+    public function dashboard()
+    {
+        return view('landingpage::dashboard');
+    }
+
     public function about()
     {
         return view('landingpage::about');
+    }
+
+    public function profile()
+    {
+        return view('landingpage::profile', [
+            'profile' => DB::table('users')
+            ->where('id', Auth::user()->id)->first(),
+        ]);
+    }
+
+    public function topup()
+    {
+        return view('landingpage::topup', [
+            'profile' => DB::table('users')
+            ->where('id', Auth::user()->id)->first(),
+        ]);
     }
 
     public function destination()
@@ -45,6 +68,38 @@ class LandingPageController extends Controller
     public function contact()
     {
         return view('landingpage::contact');
+    }
+
+    public function update_profile(Request $request){
+        DB::table('users')->where('id', Auth::user()->id)->update([
+			'name' => $request->name,
+			'email' => $request->email,
+			'image_link' => $request->image_link,
+            'phone' => $request->phone,
+            'place_of_birth' => $request->place_of_birth,
+            'date_of_birth' => $request->date_of_birth,
+            'address' => $request->address,
+            'saldo' => $request->saldo,
+            'latitude' => $request->latitude,
+            'longitude' => $request->longitude,
+		]);
+        return redirect('profile');
+    }
+
+    public function update_saldo(Request $request){
+        DB::table('users')->where('id', Auth::user()->id)->update([
+			'name' => $request->name,
+			'email' => $request->email,
+			'image_link' => $request->image_link,
+            'phone' => $request->phone,
+            'place_of_birth' => $request->place_of_birth,
+            'date_of_birth' => $request->date_of_birth,
+            'address' => $request->address,
+            'saldo' => $request->saldo,
+            'latitude' => $request->latitude,
+            'longitude' => $request->longitude,
+		]);
+        return redirect('profile');
     }
 
     /**
