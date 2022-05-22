@@ -118,6 +118,7 @@
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                     <li><a class="dropdown-item" href="/dashboard">Dashboard</a></li>
                                   <li><a class="dropdown-item" href="/profile">Profile</a></li>
+                                  <li><a class="dropdown-item" href="/topup">Topup</a></li>
                                   <li><a class="dropdown-item" href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
                                                   document.getElementById('logout-form').submit();">
@@ -156,14 +157,14 @@
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <h3 class="text-light mb-4">Services</h3>
-                    <a class="btn btn-link" href="/destinasi.html">Destination</a>
-                    <a class="btn btn-link" href="/kuliner.html">Culinary</a>
+                    <a class="btn btn-link" href="/destination">Destination</a>
+                    <a class="btn btn-link" href="/culinary">Culinary</a>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <h3 class="text-light mb-4">Quick Links</h3>
-                    <a class="btn btn-link" href="/about.html">About Us</a>
-                    <a class="btn btn-link" href="/contact.html">Contact Us</a>
-                    <a class="btn btn-link" href="/testimonial.html">Testimonial</a>
+                    <a class="btn btn-link" href="/about">About Us</a>
+                    <a class="btn btn-link" href="/contact">Contact Us</a>
+                    <a class="btn btn-link" href="/testimonial">Testimonial</a>
                 </div>
 
             </div>
@@ -201,7 +202,7 @@
     <script src="{{secure_asset('lib')}}/tempusdominus/js/moment.min.js"></script>
     <script src="{{secure_asset('lib')}}/tempusdominus/js/moment-timezone.min.js"></script>
     <script src="{{secure_asset('lib')}}/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
-
+    @yield('scripts')
     @livewireScripts
 
     <!-- Template Javascript -->

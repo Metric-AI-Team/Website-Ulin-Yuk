@@ -14,17 +14,13 @@
 use Illuminate\Support\Facades\Route;
 use Modules\LandingPage\Http\Controllers\LandingPageController;
 
-Route::prefix('destination-place')->group(function () {
-    Route::get('/', [LandingPageController::class, 'index']);
-    Route::post('/store', [LandingPageController::class, 'store']);
-    Route::get('/edit/{id}', [LandingPageController::class, 'edit']);
-    Route::post('/update/{id}', [LandingPageController::class, 'update']);
-    Route::get('/delete/{id}', [LandingPageController::class, 'destroy']);
-    Route::get('/getdata/{id}', [LandingPageController::class, 'getdata']);
-});
-
 Route::get('/', [LandingPageController::class, 'index']);
+Route::get('/dashboard', [LandingPageController::class, 'dashboard']);
 Route::get('/about', [LandingPageController::class, 'about']);
+Route::get('/profile', [LandingPageController::class, 'profile']);
+Route::get('/topup', [LandingPageController::class, 'topup']);
+Route::post('/profile/update', [LandingPageController::class, 'update_profile']);
+Route::post('/profile/topup', [LandingPageController::class, 'update_saldo']);
 Route::get('/destination', [LandingPageController::class, 'destination']);
 Route::get('/culinary', [LandingPageController::class, 'culinary']);
 Route::get('/team', [LandingPageController::class, 'team']);
