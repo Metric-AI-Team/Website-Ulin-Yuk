@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
             DestinationSeeder::class,
             CulinaryCategorySeeder::class,
             CulinarySeeder::class,
+            VoucherSeeder::class,
     	]);
     }
 }

@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Http\Request;
+use Modules\LandingPage\Http\Controllers\LandingPageController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +17,8 @@ use Illuminate\Http\Request;
 
 Route::middleware('auth:api')->get('/landingpage', function (Request $request) {
     return $request->user();
+});
+
+Route::prefix('destination')->group(function () {
+    Route::get('/', [LandingPageController::class, 'rating']);
 });

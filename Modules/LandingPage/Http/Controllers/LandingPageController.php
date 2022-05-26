@@ -3,6 +3,7 @@
 namespace Modules\LandingPage\Http\Controllers;
 
 use Illuminate\Contracts\Support\Renderable;
+use App\Helpers\ResponseFormatterHelper;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\DB;
@@ -100,6 +101,28 @@ class LandingPageController extends Controller
             'longitude' => $request->longitude,
 		]);
         return redirect('profile');
+    }
+
+    public function rating()
+    {
+        $getrating = DB::table('destination_ratings')
+            ->leftJoin('users','users.id','=','destination_ratings.user_id')
+            ->leftJoin('destinations','destinations.destination_id','=','destination_ratings.destination_id')
+            ->leftJoin('destination_categories','destination_categories.destination_category_id','=','destinations.destination_category_id')
+            ->get();
+
+        try {
+            if ($getrating == null)
+                return ResponseFormatterHelper::successResponse(null, 'Data null');
+            else if ($getrating)
+                return ResponseFormatterHelper::successResponse($getrating, 'Berhasil menampilkan data destinasi');
+            else
+                return ResponseFormatterHelper::errorResponse(null, 'Tidak ada data');
+        } catch (\Throwable $th) {
+
+            return ResponseFormatterHelper::errorResponse(null, $th);
+        }
+
     }
 
     /**
