@@ -8,13 +8,22 @@
             <h1 class="display-5 mb-4">Here is some of Bandung's finest culinary you should try! </h1>
         </div>
 
-        <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    Deteksi Kuliner
-  </button>
+        <div class="row">
+            <div class="col">
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#detection">
+                    Deteksi Kuliner
+                </button>
+            </div>
+            <div class="col" align="right">
+                <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#recommendation">
+                    Rekomendasi Kuliner
+                </button>
+            </div>
+        </div>
 
   <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="detection" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -24,6 +33,26 @@
         <div class="modal-body">
           <div style="text-align:center;">
             <iframe src="https://ulinyuk.netlify.app/" allow="camera" frameborder="0" width="500" height="300"></iframe>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="recommendation" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Rekomendasi Kuliner</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div style="text-align:center;">
+            <iframe src="https://share.streamlit.io/rusydimuhammad/ulinyukrecommenderrestaurant/main/app.py" allow="camera" frameborder="0" width="750" height="800"></iframe>
           </div>
         </div>
         <div class="modal-footer">
