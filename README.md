@@ -65,7 +65,7 @@
     <li>PHP</li>
     <li>HTML and CSS</li>
     <li>Javascript and JSON</li>
-    <li>MySQL</li>
+    <li>Postgre SQL</li>
 </ul>
 
 # Deploy
