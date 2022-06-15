@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
             CulinaryCategorySeeder::class,
             CulinarySeeder::class,
             VoucherSeeder::class,
+            ConfigSeeder::class,
     	]);
     }
 }

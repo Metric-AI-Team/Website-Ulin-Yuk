@@ -7,7 +7,45 @@
             <h4 class="section-title">Dashboard</h4>
 
         </div>
-
+        <div class="card mb-3">
+            <div class="card-body">
+              <h1 class="card-title">Halo, {{ Auth::user()->name }}</h1>
+            </div>
+          </div>
+        <div class="row">
+            <div class="col-sm-3">
+              <div class="card">
+                <div class="card-body">
+                  <h2 class="card-title">Destination</h2>
+                  <a href="/destination" class="btn btn-primary">Jelajahi</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="card">
+                <div class="card-body">
+                  <h2 class="card-title">Culinary</h2>
+                  <a href="/culinary" class="btn btn-primary">Jelajahi</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card">
+                  <div class="card-body">
+                    <h2 class="card-title">Chatbot</h2>
+                    <a href="/chatbot" class="btn btn-primary">Jelajahi</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-3">
+                <div class="card">
+                  <div class="card-body">
+                    <h2 class="card-title">Game</h2>
+                    <a href="/game-cat" class="btn btn-primary">Jelajahi</a>
+                  </div>
+                </div>
+              </div>
+          </div>
 
         </div>
     </div>

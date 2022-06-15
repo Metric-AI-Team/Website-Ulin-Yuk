@@ -38,6 +38,14 @@ class LandingPageController extends Controller
         ]);
     }
 
+    public function config()
+    {
+        return view('landingpage::configuration', [
+            'config' => DB::table('configurations')
+            ->where('id', 1)->first(),
+        ]);
+    }
+
     public function topup()
     {
         return view('landingpage::topup', [
@@ -71,6 +79,24 @@ class LandingPageController extends Controller
         return view('landingpage::contact');
     }
 
+    public function game_cat()
+    {
+        return view('landingpage::game_cat');
+    }
+
+    public function game_cross()
+    {
+        return view('landingpage::game_cross');
+    }
+
+    public function chatbot()
+    {
+        return view('landingpage::chatbot', [
+            'config' => DB::table('configurations')
+            ->where('id', 1)->first(),
+        ]);
+    }
+
     public function update_profile(Request $request){
         DB::table('users')->where('id', Auth::user()->id)->update([
 			'name' => $request->name,
@@ -85,6 +111,14 @@ class LandingPageController extends Controller
             'longitude' => $request->longitude,
 		]);
         return redirect('profile');
+    }
+
+    public function update_config(Request $request){
+        DB::table('configurations')->where('id', 1)->update([
+			'config_key' => $request->config_key,
+			'config_value' => $request->config_value,
+		]);
+        return redirect('config');
     }
 
     public function update_saldo(Request $request){
