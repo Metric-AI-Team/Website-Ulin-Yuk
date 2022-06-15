@@ -8,7 +8,7 @@
     }
 </style>
 
-<link href="{{asset('css')}}/Chatroom.css" rel="stylesheet">
+<link href="{{secure_asset('css')}}/Chatroom.css" rel="stylesheet">
 
 <div class="container-xxl py-5">
     <div class="container">
@@ -20,7 +20,7 @@
         </div>
     </div>
 </div>
-<script src="{{asset('js')}}/Chatroom.js"></script>
+<script src="{{secure_asset('js')}}/Chatroom.js"></script>
 <script type="text/javascript">
     var chatroom = window.Chatroom({
         host: {!! json_encode($config->config_value) !!},
