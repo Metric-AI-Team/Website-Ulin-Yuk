@@ -27,7 +27,7 @@
         title: "Metricbot",
         fontFamily: 'Ubuntu',
         container: document.querySelector(".chat-container"),
-        welcomeMessage: "Hi I am Metricbot, How may I Help you?",
+        welcomeMessage: "Hai Saya Metricbot ?",
         speechRecognition: "en-US",
         height: "50px",
         fontSize: "10px"
